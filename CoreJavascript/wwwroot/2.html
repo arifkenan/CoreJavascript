@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="C:\Users\arif_\source\repos\CoreJavascript\CoreJavascript\wwwroot\JavaScript.js"></script>
+    <script src="JavaScript.js"></script>
+    <head>
+        <style>
+
+            body {
+                background-color: #1e1e1e;
+                font-family: sans-serif;
+                color: white;
+                font-size: 15px;
+            }
+
+            input[type="text"] {
+                display: block;
+                color: white;
+                font-size: 15px;
+                padding: 7.5px;
+                margin: 10px 0;
+                background-color: #1e1e1e;
+                border-radius: 10px 10px;
+                border: 2px solid red;
+            }
+
+            button {
+                background: #ff0000;
+                font-size: 20px;
+                border-radius: 10px 10px;
+                color: black;
+                font-family: sans-serif;
+                border-color: black;
+            }
+
+            p {
+                font-family: sans-serif;
+                font-size: 15px;
+                color: white;
+            }
+        </style>
+    </head>
+</head>
+
+<body>
+    <div class="container">
+        <form action="/" method="post" class="">
+            <div>
+
+                <label for="Tc" class="form-label">Tc Kimlik Numaranız: </label>
+                <input type="text" class="form-control" name="name" value="" id="Tc" placeholder="Tc Numaranızı giriniz" />
+            </div>
+
+            <div>
+                <label for="Ad" class="form-label">Adınız: </label>
+                <input type="text" class="form-control" name="name" value="" id="Ad" placeholder="Adınızı giriniz" />
+            </div>
+            <div>
+                <label for="Soyad" class="form-label">Soyadınız: </label>
+                <input type="text" class="form-control" name="name" value="" id="Soyad" placeholder="Soyadınızı giriniz" />
+            </div>
+            <div>
+                <label for="Gsm" class="form-label">Telefon Numaranız: </label>
+                <input type="text" class="form-control" name="name" value="" id="Gsm" placeholder="Telefon numaranızı giriniz" />
+            </div>
+            <div>
+                <label for="Email" class="form-label">Email'iniz: </label>
+                <input type="text" class="form-control" ="name" value="" id="Email" placeholder="Email adresinizi giriniz" />
+            </div>
+        </form>
+        <button type="submit" class="btn btn-danger" id="button">Kaydet</button>
+        <p id="sonuc"></p>
+    </div>
+    
+</body>
+<script type="text/javascript">
+
+    Tc = document.getElementById('Tc').value;
+    function tcnocheck(Tc) {
+        console.log(Tc)
+        let tcno = document.getElementById('Tc').value;
+        console.log(tcno);
+
+        let TextLength = tcno.length;
+        console.log(TextLength);
+        if (TextLength != 11) {
+            alert("TC No 11 Haneli Olmalıdır!");
+
+        }
+        else if (isNaN(tcno)) {
+            alert("Sayisal deger giriniz");
+        }
+        else {
+            return tcno;
+        }
+
+    }
+    Ad = document.getElementById('Ad')
+    Soyad = document.getElementById('Soyad')
+    Gsm = document.getElementById('Gsm')
+    Email = document.getElementById('Email')
+    Buton = document.getElementById('button')
+    icerik = document.getElementById('sonuc')
+    Buton.addEventListener('click', function (event) {
+
+        bastir = ('Tc Kimlik Numaranız: ' + tcnocheck(Tc.value) + "<br\> " + 'Adınız: ' + Ad.value + " <br\> " + 'Soyadınız: ' + Soyad.value + " <br\> " + 'Telefon Numaranız: ' + Gsm.value + " <br\> " + "E - mail'iniz: " + Email.value);
+
+        icerik.innerHTML = bastir
+
+    })
+</script>
+</html>
