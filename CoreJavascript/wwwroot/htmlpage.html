@@ -1,0 +1,24 @@
+﻿<html>
+<head>
+</head>
+<body>
+   <table class="table table-striped">
+    <tr class="bg-info">
+        <th>Name</th>
+        <th>Age</th>
+        <th>Birthday</th>
+    </tr>
+
+    <tbody id="html">
+    </tbody>
+    </table>
+    <script>
+        fetch('https://dummy.restapiexample.com/api/v1/employees').then(function (res) {
+            return res.text();
+        }).then(function (html) {
+            document.write(`html = ${html}`);
+
+        });
+    </script>
+</body>
+</html>
